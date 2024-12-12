@@ -15,7 +15,7 @@ const App = () => {
   // Function to Fetch Task
   const fetchTasks = async() => {
     try {
-      const response = await axios.get(`https://backend-to-do-task-scheduler.onrender.com/api/v1/all-task-list`);
+      const response = await axios.get(`${import.meta.env.VITE_HOSTED_ROUTE}/all-task-list`);
       setTasks(response.data.taskData.reverse());
     } 
     catch (error) {
