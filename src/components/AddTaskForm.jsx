@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
+
 import { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AddTaskForm = ({ fetchTasks }) => {
   const [taskName, setTaskName] = useState('');
@@ -9,45 +11,52 @@ const AddTaskForm = ({ fetchTasks }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      await axios.post('https://backend-to-do-task-scheduler.onrender.com/api/v1/create-task', {
+      await axios.post(`${import.meta.env.VITE_HOSTED_ROUTE}/create-task`, {
         taskName,
         taskDescription,
         taskDate,
       });
+
       fetchTasks(); // Refresh the task list
-      setTaskName('');
-      setTaskDescription('');
-      setTaskDate('');
+      toast.success("Task Added Successfully");
+      
+      setTaskName("");
+      setTaskDescription("");
+      setTaskDate("");
     } catch (error) {
       console.error('Error adding task:', error);
+      toast.error('Error adding task:', error);
     }
   };
 
   return (
-    <div>
+    <div className='add-task-container'>
       <h2>Add New Task</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Task Name:</label>
+          <label>Task Name :- </label>
           <input
             type="text"
+            placeholder='Enter task Title'
             value={taskName}
             onChange={(e) => setTaskName(e.target.value)}
             required
           />
         </div>
         <div>
-          <label>Task Description:</label>
+          <label>Task Description :- </label>
           <input
             type="text"
+            placeholder='Enter task Details'
             value={taskDescription}
             onChange={(e) => setTaskDescription(e.target.value)}
             required
           />
         </div>
         <div>
-          <label>Task Date:</label>
+          <label>Task Date :- </label>
           <input
             type="date"
             value={taskDate}
@@ -55,7 +64,7 @@ const AddTaskForm = ({ fetchTasks }) => {
             required
           />
         </div>
-        <button type="submit">Add Task</button>
+        <button className='add-task-btn' type="submit">Add Task</button>
       </form>
     </div>
   );

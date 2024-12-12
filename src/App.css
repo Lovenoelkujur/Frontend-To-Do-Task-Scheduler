@@ -13,7 +13,7 @@ body {
 }
 
 .main{
-  /* background-color: orange; */
+  /* background-color: #4CAF50; */
   width: 100%;
   height: 100vh;
   text-align: center;
@@ -27,24 +27,58 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  margin-top: 20px;
+.add-task-container{
+  /* background-color: rgba(128, 128, 128, 0.581); */
+  font-size: 1.2rem;
 }
 
-form div {
-  margin-bottom: 10px;
+.add-task-container form{
+  /* background-color: rgba(128, 128, 128, 0.581); */
+  background-color: slategray;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-button {
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
+.add-task-container input{
+  background-color: antiquewhite;
+  padding: 0.5rem;
+  font-size: 1.2rem;
   border: none;
+  border-radius: 0.5rem;
+}
+
+h2 {
+  background-color: rgba(255, 196, 0, 0.701);
+  color: darkblue;
+  padding: 1rem 0;
+  font-style: italic;
+}
+
+/* form div {
+  margin-bottom: 10px;
+} */
+
+.add-task-btn {
+  background-color: #4CAF50;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #45a049;
+.add-task-btn:hover {
+  background-color: darkgreen;
+  color: white;
+}
+
+.task-list-container{
+  background-color: aliceblue;
+  padding: 1rem 0;
 }
 
 ul {
@@ -52,7 +86,167 @@ ul {
   padding: 0;
 }
 
+.banner{
+  background-color: orange;
+  color: darkblue;
+  padding: 0.1rem 0;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-left: 7rem;
+}
+
+.banner-description{
+  width: 48rem;
+}
+
 li {
+  background-color: rgba(31, 132, 190, 0.725);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: start;
+  font-size: 1.2rem;
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
+}
+
+.task{
+  /* background-color: aqua; */
+  width: 10rem;
+}
+
+.task-title{
+  color: purple;
+}
+
+.task-description{
+  /* background-color: yellow; */
+  width: 45rem;
+}
+
+.task-date{
+  color: greenyellow;
+}
+
+.task-status{
+  color: rgb(237, 241, 18);
+  font-size: 1.4rem;
+}
+
+.check{
+  background-color: transparent;
+  width: 2.5rem;
+}
+
+/* .task-delete{
+  background-color: rgba(31, 132, 190, 0.725);
+  border: none;
+} */
+
+.task-update button{
+  background-color: transparent;
+  border: none;
+}
+
+.task-update button img{
+  background-color: black;
+  width: 2.5rem;
+  border: none;
+}
+
+.task-update button:hover{
+  background-color: rgba(183, 255, 0, 0.72);
+  padding: 0.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.task-delete button{
+  background-color: transparent;
+  border: none;
+}
+
+.task-delete button img{
+  background-color: transparent;
+  width: 2.5rem;
+}
+
+.task-delete button:hover{
+  background-color: rgba(183, 255, 0, 0.72);
+  padding: 0.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.update-task-container {
+  background-color: lightyellow;
+  width: 90%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.update-task-container h2{
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.update-task-container form {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.update-task-container form input {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.update-task-container button {
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.update-btn{
+  background-color: rgba(42, 42, 215, 0.741);
+}
+
+.update-btn:hover{
+  background-color: blue;
+}
+
+.cancel-btn{
+  background-color: rgba(255, 0, 0, 0.692);
+}
+
+.cancel-btn:hover{
+  background-color: red;
+}
+
+
+.task-title.completed h3,
+.task-description.completed p {
+  position: relative;
+  
+}
+
+.task-title.completed h3::after,
+.task-description.completed p::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%; /* Vertically center the line */
+  height: 3px; /* Thickness of the line */
+  background-color: cyan; /* Custom line-through color */
+  z-index: 1;
 }
