@@ -19,7 +19,7 @@ const App = () => {
       setTasks(response.data.taskData.reverse());
     } 
     catch (error) {
-      console.log("Error Fetching Tasks", error.message); 
+      console.log("Error Fetching Tasks", error.message);
     }
   };
 
