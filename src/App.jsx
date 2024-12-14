@@ -5,8 +5,6 @@ import axios from 'axios';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// console.log(import.meta.env.VITE_HOSTED_ROUTE);
-
 
 const App = () => {
 

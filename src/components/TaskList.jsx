@@ -5,6 +5,9 @@ import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import UpdateTaskForm from "./UpdateTaskForm";
+import checkIcon from "../assets/check.png";
+import editIcon from "../assets/edit.png";
+import deleteIcon from "../assets/delete.png";
 
 
 const TaskList = ({ tasks, fetchTasks }) => {
@@ -97,7 +100,7 @@ const TaskList = ({ tasks, fetchTasks }) => {
             <div className='task task-status'>
               <p>
                 {task.isCompleted ? 
-                    <img className="check" src="../src/assets/check.png" alt="completed" /> 
+                    <img className="check" src={checkIcon} alt="completed" /> 
                   :
                     'Pending...'}
               </p>
@@ -105,13 +108,13 @@ const TaskList = ({ tasks, fetchTasks }) => {
 
             <div className="task-update">
               <button onClick={() => handleUpdate(task._id)}>
-                <img src="../src/assets/edit.png" alt="Edit" />
+                <img src={editIcon} alt="Edit" />
               </button>
             </div>
 
             <div className="task-delete">
               <button onClick={() => handleDelete(task._id)}>
-                <img src="../src/assets/delete.png" alt="delete" />
+                <img src={deleteIcon} alt="delete" />
               </button>
             </div>
 
